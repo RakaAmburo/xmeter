@@ -1,0 +1,42 @@
+
+package com.globant.jmeter.tester.pojos.add2cart;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.annotation.Generated;
+
+@Generated("org.jsonschema2pojo")
+public class TermsAndConditions {
+
+    private List<String> roomOnly = new ArrayList<String>();
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    /**
+     * 
+     * @return
+     *     The roomOnly
+     */
+    public List<String> getRoomOnly() {
+        return roomOnly;
+    }
+
+    /**
+     * 
+     * @param roomOnly
+     *     The roomOnly
+     */
+    public void setRoomOnly(List<String> roomOnly) {
+        this.roomOnly = roomOnly;
+    }
+
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
+}

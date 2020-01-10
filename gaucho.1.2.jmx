@@ -1,0 +1,2290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.1" jmeter="3.1 r1770033">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Cart+" enabled="true">
+      <stringProp name="TestPlan.comments">For questions/doubts about the functionality you can write to santiago.x.lohigory.-nd@disney.com or skype to s.lohigorry</stringProp>
+      <boolProp name="TestPlan.functional_mode">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Environments" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="authentication-service" elementType="Argument">
+            <stringProp name="Argument.name">authentication-service</stringProp>
+            <stringProp name="Argument.value">latest</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="availability-service" elementType="Argument">
+            <stringProp name="Argument.name">availability-service</stringProp>
+            <stringProp name="Argument.value">latest</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="booking-service" elementType="Argument">
+            <stringProp name="Argument.name">booking-service</stringProp>
+            <stringProp name="Argument.value">latest</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="cart-service" elementType="Argument">
+            <stringProp name="Argument.name">cart-service</stringProp>
+            <stringProp name="Argument.value">latest</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="lodging-service" elementType="Argument">
+            <stringProp name="Argument.name">lodging-service</stringProp>
+            <stringProp name="Argument.value">latest</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="finder-service" elementType="Argument">
+            <stringProp name="Argument.name">finder-service</stringProp>
+            <stringProp name="Argument.value">latest</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="product-service" elementType="Argument">
+            <stringProp name="Argument.name">product-service</stringProp>
+            <stringProp name="Argument.value">latest</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="profile-service" elementType="Argument">
+            <stringProp name="Argument.name">profile-service</stringProp>
+            <stringProp name="Argument.value">latest</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="recommendation-service" elementType="Argument">
+            <stringProp name="Argument.name">recommendation-service</stringProp>
+            <stringProp name="Argument.value">latest</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="reservation-service" elementType="Argument">
+            <stringProp name="Argument.name">reservation-service</stringProp>
+            <stringProp name="Argument.value">latest</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="SF" elementType="Argument">
+            <stringProp name="Argument.name">SF</stringProp>
+            <stringProp name="Argument.value">https://env5.nge.api.go.com/assembly</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+        <stringProp name="TestPlan.comments">Supported values for services: local, latest, stage, epic, env1, env2, env3 &amp; qa</stringProp>
+      </Arguments>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="General variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="conversationId.prefix" elementType="Argument">
+            <stringProp name="Argument.name">conversationId.prefix</stringProp>
+            <stringProp name="Argument.value">your_name</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="region" elementType="Argument">
+            <stringProp name="Argument.name">region</stringProp>
+            <stringProp name="Argument.value">US</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">Only tested with &quot;US&quot;</stringProp>
+          </elementProp>
+          <elementProp name="offerId" elementType="Argument">
+            <stringProp name="Argument.name">offerId</stringProp>
+            <stringProp name="Argument.value">10354</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="components" elementType="Argument">
+            <stringProp name="Argument.name">components</stringProp>
+            <stringProp name="Argument.value">room,tickets</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="action" elementType="Argument">
+            <stringProp name="Argument.name">action</stringProp>
+            <stringProp name="Argument.value">check offers</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">parameters: ages, startIn, days</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="- - - - - - - - - - - - Plan Results - - - - - - - - - - - -" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+          </value>
+        </objProp>
+        <objProp>
+          <name></name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>true</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>true</responseData>
+            <samplerData>true</samplerData>
+            <xml>true</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>true</responseHeaders>
+            <requestHeaders>true</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <url>true</url>
+            <fileName>true</fileName>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+            <idleTime>true</idleTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+        <boolProp name="ResultCollector.success_only_logging">true</boolProp>
+      </ResultCollector>
+      <hashTree/>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Users" enabled="true">
+        <stringProp name="TestPlan.comments">&apos;userType&apos; sopported values: user (logged in guest), guest (logged off guest) and travel agent.
+Leave only one user enabled at a time. Different functionality for each type should be handled automatically.</stringProp>
+      </TestFragmentController>
+      <hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Annonymous consumer" enabled="false"/>
+        <hashTree>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="WDW" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">guest</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="DLR" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">guest</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">dlr</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Logged in consumer" enabled="true"/>
+        <hashTree>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Passholder" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">veronica5@test.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">test</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Florida resident" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">abc@test12.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">12345a</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="affiliations" elementType="Argument">
+                <stringProp name="Argument.name">affiliations</stringProp>
+                <stringProp name="Argument.value">STD_GST</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="German" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">german.medaglia@globant.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">Locura1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Consumer: Ignacio" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">ignacio.miguel@globant.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">Inicial002</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Jarad" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">performance.checkout@disney.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">111111</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Mods 170" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">mods0170@testing.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">disney</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Jerry" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">jerrry.liu@disney.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">disney</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Juan" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">juan.carranza@globant.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">test</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Mari" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">mari@pepfamily.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">test</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+            <stringProp name="TestPlan.comments">Passholder, Florida resident</stringProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Offline user" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">mods0170@testing.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">disney1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">Disney</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Others" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">qa@kapow.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">test123</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Phil" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">phil@pepfamily.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">phil001</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Reservations" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">reservations@pep.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">test</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Rodrigo" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">rodrigo.domingo@globant.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">testDisney</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="San" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">user</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="username" elementType="Argument">
+                <stringProp name="Argument.name">username</stringProp>
+                <stringProp name="Argument.value">san@pepfamily.com</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="password" elementType="Argument">
+                <stringProp name="Argument.name">password</stringProp>
+                <stringProp name="Argument.value">test</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+            <stringProp name="TestPlan.comments">Passholder, Florida resident</stringProp>
+          </Arguments>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Travel agents" enabled="false"/>
+        <hashTree>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="wdw: 00541332" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">travelAgent</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="iata" elementType="Argument">
+                <stringProp name="Argument.name">iata</stringProp>
+                <stringProp name="Argument.value">00541332</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw_dta-packages-std</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="travelAgentId" elementType="Argument">
+                <stringProp name="Argument.name">travelAgentId</stringProp>
+                <stringProp name="Argument.value">wdw10001</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="affiliations" elementType="Argument">
+                <stringProp name="Argument.name">affiliations</stringProp>
+                <stringProp name="Argument.value">STD_GST</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="wdw: 24632716" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">travelAgent</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="iata" elementType="Argument">
+                <stringProp name="Argument.name">iata</stringProp>
+                <stringProp name="Argument.value">24632716</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw_dta-packages-std</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="travelAgentId" elementType="Argument">
+                <stringProp name="Argument.name">travelAgentId</stringProp>
+                <stringProp name="Argument.value">wdw10002</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="affiliations" elementType="Argument">
+                <stringProp name="Argument.name">affiliations</stringProp>
+                <stringProp name="Argument.value">STD_GST</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="wdw: 45546992" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">travelAgent</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="iata" elementType="Argument">
+                <stringProp name="Argument.name">iata</stringProp>
+                <stringProp name="Argument.value">45546992</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw_dta-packages-std</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="travelAgentId" elementType="Argument">
+                <stringProp name="Argument.name">travelAgentId</stringProp>
+                <stringProp name="Argument.value">wdw10003</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="affiliations" elementType="Argument">
+                <stringProp name="Argument.name">affiliations</stringProp>
+                <stringProp name="Argument.value">STD_GST</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="wdw: 999 999 98" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">travelAgent</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="iata" elementType="Argument">
+                <stringProp name="Argument.name">iata</stringProp>
+                <stringProp name="Argument.value">99999998</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw_dta-packages-std</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="travelAgentId" elementType="Argument">
+                <stringProp name="Argument.name">travelAgentId</stringProp>
+                <stringProp name="Argument.value">wdw10004</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="affiliations" elementType="Argument">
+                <stringProp name="Argument.name">affiliations</stringProp>
+                <stringProp name="Argument.value">STD_GST</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="wdw: 999 999 9998" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">travelAgent</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="iata" elementType="Argument">
+                <stringProp name="Argument.name">iata</stringProp>
+                <stringProp name="Argument.value">9999999998</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw_dta-packages-std</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="travelAgentId" elementType="Argument">
+                <stringProp name="Argument.name">travelAgentId</stringProp>
+                <stringProp name="Argument.value">wdw10006</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="affiliations" elementType="Argument">
+                <stringProp name="Argument.name">affiliations</stringProp>
+                <stringProp name="Argument.value">STD_GST</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="wdw: 23548560" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">travelAgent</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="iata" elementType="Argument">
+                <stringProp name="Argument.name">iata</stringProp>
+                <stringProp name="Argument.value">23548560</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw_dta-packages-std</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="travelAgentId" elementType="Argument">
+                <stringProp name="Argument.name">travelAgentId</stringProp>
+                <stringProp name="Argument.value">wdw10007</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="affiliations" elementType="Argument">
+                <stringProp name="Argument.name">affiliations</stringProp>
+                <stringProp name="Argument.value">STD_GST</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="vb: 300032072" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">travelAgent</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="iata" elementType="Argument">
+                <stringProp name="Argument.name">iata</stringProp>
+                <stringProp name="Argument.value">300032072</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">vb_dta-room-only-std</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="travelAgentId" elementType="Argument">
+                <stringProp name="Argument.name">travelAgentId</stringProp>
+                <stringProp name="Argument.value">vb10001</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="affiliations" elementType="Argument">
+                <stringProp name="Argument.name">affiliations</stringProp>
+                <stringProp name="Argument.value">STD_GST</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="dlr: 999 999 98" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">travelAgent</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="iata" elementType="Argument">
+                <stringProp name="Argument.name">iata</stringProp>
+                <stringProp name="Argument.value">99999998</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">dlr_dta-packages-std</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.desc">dlr_dta-packages-std</stringProp>
+              </elementProp>
+              <elementProp name="travelAgentId" elementType="Argument">
+                <stringProp name="Argument.name">travelAgentId</stringProp>
+                <stringProp name="Argument.value">dlr10001</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="affiliations" elementType="Argument">
+                <stringProp name="Argument.name">affiliations</stringProp>
+                <stringProp name="Argument.value">STD_GST,CAL_RESIDENT</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+          <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="sog: 999 999 98" enabled="false">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="userType" elementType="Argument">
+                <stringProp name="Argument.name">userType</stringProp>
+                <stringProp name="Argument.value">travelAgent</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="iata" elementType="Argument">
+                <stringProp name="Argument.name">iata</stringProp>
+                <stringProp name="Argument.value">99999998</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="storeId" elementType="Argument">
+                <stringProp name="Argument.name">storeId</stringProp>
+                <stringProp name="Argument.value">wdw_dta-packages-sog</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="travelAgentId" elementType="Argument">
+                <stringProp name="Argument.name">travelAgentId</stringProp>
+                <stringProp name="Argument.value">sog10001</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="affiliations" elementType="Argument">
+                <stringProp name="Argument.name">affiliations</stringProp>
+                <stringProp name="Argument.value">STD_GST</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </Arguments>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Flows" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">stopthread</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">0</stringProp>
+        <longProp name="ThreadGroup.start_time">1375374118000</longProp>
+        <longProp name="ThreadGroup.end_time">1375374118000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP default headers" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Content-Type</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Accept</stringProp>
+              <stringProp name="Header.value">application/json</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">X-Conversation-Id</stringProp>
+              <stringProp name="Header.value">${conversationId}</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">Authorization</stringProp>
+              <stringProp name="Header.value">BEARER ${authToken}</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">X-page-id</stringProp>
+              <stringProp name="Header.value">http://example.page.id</stringProp>
+            </elementProp>
+            <elementProp name="" elementType="Header">
+              <stringProp name="Header.name">X-correlation-id</stringProp>
+              <stringProp name="Header.value">example.correlation.id2</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Configurations" enabled="true"/>
+        <hashTree>
+          <BSFSampler guiclass="TestBeanGUI" testclass="BSFSampler" testname="Conf: Build helper" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">var helper = {};
+
+////////////////////////// Value retrieval ////////////////////////////
+
+helper.get = function(name) { return String(vars.get(name)).trim() }
+helper.getNumber = function(name) { return Number(this.get(name)) }
+helper.getBoolean = function(name) { return this.get(name) == &quot;true&quot; }
+
+helper.removeEmptyValues = function(values) {
+  var nonEmptyValues = [];
+  for (var i in values) {
+    if (values[i].trim().length != 0) {
+      nonEmptyValues.push(values[i].trim());
+    }
+  }
+  return nonEmptyValues;
+}
+
+helper.getValues = function(name) { 
+  var values = this.get(name).split(&quot;,&quot;);
+  return this.removeEmptyValues(values);
+}
+
+helper.getAsNumericArray = function(param) {
+  var values = this.getValues(param);
+  var numericValues = [];
+  for (var i in values) {
+    if (values[i].length != 0) {
+    	 numericValues.push(Number(values[i]));
+    }
+  }
+  return numericValues;
+}
+
+helper.containsValue = function(array, value) { // indexOf doesn&apos;t work, or something.
+  for (var i=0; i&lt;array.length; i++) { 
+    if (array[i].equals(value)) { 
+      return true; 
+    } 
+  } 
+  return false;
+}
+
+helper.haveSameValues = function(a1, a2) {
+  if (a1.length != a2.length) { return false; }
+  for (i in a1) {
+    if (!containsValue(a2, a1[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+////////////////////////// Formatting ////////////////////////////
+
+helper.trim = function(val) { return val.replace(/^\s+|\s+$/g, &apos;&apos;); }
+
+helper.simplifyId = function(value) {
+  return value.indexOf(&quot;;&quot;) != -1 ? value.substring(0, value.indexOf(&quot;;&quot;)) : value;
+}
+
+helper.parseSiteId = function(value) {
+  return value.indexOf(&quot;_&quot;) != -1 ? value.substring(0, value.indexOf(&quot;_&quot;)) : value;
+}
+
+helper.parseLinkId = function(link) {
+  var id = link;
+  if (id.lastIndexOf(&quot;/&quot;) != -1) {
+    id = id.substring(id.lastIndexOf(&quot;/&quot;) + 1, id.length);
+  }
+  if (id.indexOf(&quot;?&quot;) != -1) {
+    id = id.substring(0, id.indexOf(&quot;?&quot;));
+  }
+  return id;
+}
+
+helper.pad = function(val) { 
+  return val &lt; 10 ? &apos;0&apos; + val : val; 
+}
+
+helper.toCommaDelimited = function(val) {
+  if (!Array.isArray(val) || val.length &lt;= 0) {
+    return val;
+  }
+  var result = &quot;&quot;;
+  for (var i=0; i&lt;val.length; i++) {
+    result += val[i] + (i&lt;val.length ? &quot;,&quot; : &quot;&quot;);
+  }
+  return result;
+}
+
+////////////////////////// Error managing ////////////////////////////
+
+helper.addBorders = function(message) {
+  var border = &quot;\n=====================================================\n&quot;;
+  return border + message + border;
+}
+
+helper.buildErrorScenario = function(prev, message) {
+  prev.setSuccessful(false);
+  prev.setResponseMessage(this.addBorders(message));
+  return prev;
+}
+
+////////////////////////// Business ////////////////////////////
+
+helper.buildPartyMix = function(ages) {
+  var partyMix = { &quot;adultCount&quot;: 0, &quot;childCount&quot;: 0, &quot;nonAdultAges&quot;: [] };
+  for (var i in ages) {
+    if (ages[i].length != 0) {
+      if (ages[i] &gt;= 18) {
+        partyMix.adultCount++;
+      } else {
+        partyMix.childCount++;
+    	   partyMix.nonAdultAges.push({ &quot;age&quot;: Number(ages[i]) });
+      }
+    }
+  }
+  return partyMix;
+}
+
+helper.buildDate = function(daysAhead) {
+  var date = new Date();  
+  date.setDate(date.getDate() + Number(daysAhead));
+  return date.getFullYear() +&apos;-&apos;+ this.pad(date.getMonth()+1) +&apos;-&apos;+ this.pad(date.getDate());
+}
+
+helper.buildUserIdentifier = function() {
+  var userType = helper.get(&quot;userType&quot;);
+  var isTravelAgent = userType === &quot;travelAgent&quot;; 
+  
+  var userId = { 
+    &quot;type&quot;: isTravelAgent ? &quot;TRAVEL_AGENT&quot; : &quot;GUEST&quot;,
+    &quot;idType&quot;: isTravelAgent ? &quot;travelAgentId&quot; : &quot;swid&quot;
+  }
+
+  if (userType === &quot;user&quot;) {
+    userId.id = helper.get(&quot;swid&quot;);
+  } else if (isTravelAgent) {
+    userId.id = helper.get(&quot;travelAgentId&quot;);
+    userId.partnerId = helper.get(&quot;iata&quot;);
+    userId.partnerIdType = &quot;IATA&quot;;
+  } else if (userType === &quot;partner&quot;) {
+    userId.partnerIdType = &quot;IATA&quot;;
+    userId.partnerId = helper.get(&quot;partnerId&quot;);
+  }
+  return userId;
+}
+
+helper.buildParticipant = function(i, input, vacationOfferId) {
+  return {
+    &quot;age&quot;: input.age &gt; 18 ? 18 : input.age,
+    &quot;birthDate&quot;: null,
+    &quot;emailAddress&quot;: null,
+    &quot;phone&quot;: null,
+    &quot;primary&quot;: i == 0,
+    &quot;swid&quot;: input.swid ? input.swid : null,
+    &quot;guid&quot;: input.guid ? input.guid : null,
+    &quot;gender&quot;: null,
+    &quot;type&quot;: null,
+    &quot;participantId&quot;: i,
+    &quot;profileLink&quot;: &quot;&quot;,
+    &quot;infantSittingWithAdult&quot;: false,
+    &quot;avatar&quot;: null,
+    &quot;itemsAssigned&quot;: [ vacationOfferId ],
+    &quot;address&quot;: null,
+    &quot;phoneNumber&quot;: null,
+    &quot;dataType&quot;: &quot;basic&quot;, 
+    &quot;isRoomAssigned&quot;: true,
+    &quot;isVacationOfferAssigned&quot;: true,
+    &quot;ageGroup&quot;: &quot;&quot;,
+    &quot;name&quot;: {
+      &quot;prefix&quot;: input.name.title ? input.name.title : input.name.prefix,
+    	 &quot;firstName&quot;: input.name.firstName,
+    	 &quot;middleName&quot;: &quot;&quot;,
+    	 &quot;lastName&quot;: input.name.lastName,
+    	 &quot;suffix&quot;: &quot;&quot;
+    }
+  }
+}
+
+
+vars.putObject(&quot;helper&quot;, helper);</stringProp>
+            <stringProp name="scriptLanguage">javascript</stringProp>
+          </BSFSampler>
+          <hashTree/>
+          <BSFSampler guiclass="TestBeanGUI" testclass="BSFSampler" testname="Conf: Validate &amp; process input" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">var helper = vars.getObject(&quot;helper&quot;);
+
+////////////////////      Validate       ////////////////////
+function validateProperty(valueKey, supportedKey) {
+  var supported = helper.getValues(supportedKey);
+  var values = helper.getValues(valueKey);
+  for (var i in values) {
+    if (!helper.containsValue(supported, values[i])) {
+    	var msg = &quot;Wrong value in variable &apos;&quot; + valueKey + &quot;&apos;: &quot; + values[i] 
+    			+ &quot;.\nSupported values are: &quot; + supported;
+    	throw helper.addBorders(msg)
+    }
+  }
+}
+validateProperty(&quot;userType&quot;, &quot;supportedUserTypes&quot;);
+
+function validateSelectedServices() {
+  var supportedServices = helper.getValues(&quot;supportedServices&quot;);
+  for (var i in supportedServices) {
+    validateProperty(supportedServices[i], &quot;supportedEnvironments&quot;);
+  }
+}
+validateSelectedServices();
+
+
+////////////////////      Process       ////////////////////
+
+function setUserType() { // For easier use on the plan.
+  vars.put(&quot;isUser&quot;, &quot;${userType}&quot; === &quot;user&quot;);
+  vars.put(&quot;isGuest&quot;, &quot;${userType}&quot; === &quot;guest&quot;);
+  vars.put(&quot;isTravelAgent&quot;, &quot;${userType}&quot; === &quot;travelAgent&quot;);
+  vars.put(&quot;isPartner&quot;, &quot;${userType}&quot; === &quot;partner&quot;);
+};
+setUserType();
+
+
+function buildStoreConfig() {
+  var storeId = helper.get(&quot;storeId&quot;);
+  var siteId = helper.parseSiteId(storeId);
+  if (siteId == &quot;wdw&quot;) {
+    vars.put(&quot;destination&quot;, &quot;80007798&quot;);
+    vars.put(&quot;airportId&quot;, &quot;MCO&quot;);
+  } else if (siteId == &quot;dlr&quot;) {
+    vars.put(&quot;destination&quot;, &quot;80008297&quot;);
+  }
+}
+buildStoreConfig();
+
+
+function buildAuthenticationValues() {
+  var path = helper.get(&quot;authentication-service&quot;);
+  vars.put(&quot;authClientId&quot;, helper.get(path + &quot;_clientId&quot;));
+  vars.put(&quot;authClientSecret&quot;, helper.get(path + &quot;_clientSecret&quot;));
+  vars.put(&quot;authPath&quot;, helper.get(path + &quot;_authPath&quot;));
+}
+buildAuthenticationValues();
+
+
+// We expand the input to the entire services URL.
+function buildServicesPath() {
+  var supportedServices = helper.getValues(&quot;supportedServices&quot;);
+  for (var i in supportedServices) {
+    var environment = helper.get(supportedServices[i]);
+    vars.put(supportedServices[i], helper.get(environment) + &quot;/&quot; + supportedServices[i]);
+  }
+}
+buildServicesPath();
+
+
+// We build a prefix+date+time on the server UTC time.
+function buildConversationId() {
+  var months = [&apos;Jan&apos;,&apos;Feb&apos;,&apos;Mar&apos;,&apos;Apr&apos;,&apos;May&apos;,&apos;Jun&apos;,&apos;Jul&apos;,&apos;Aug&apos;,&apos;Sep&apos;,&apos;Oct&apos;,&apos;Nov&apos;,&apos;Dec&apos;];
+  var serverUtcDiff = ((new Date().getTimezoneOffset() + (-7 * 60)) * 60000);
+  
+  var utc = new Date(new Date().getTime() + serverUtcDiff);
+  var date = months[utc.getMonth()] +&apos;-&apos;+ helper.pad(utc.getDate()) +&apos;-&apos;+ utc.getFullYear();
+  var time = helper.pad(utc.getHours() % 12) +&apos;-&apos;+ helper.pad(utc.getMinutes()) 
+             + (utc.getHours() &gt; 12 ? &apos;pm&apos; : &apos;am&apos;);
+  
+  vars.put(&quot;conversationId&quot;, &quot;${conversationId.prefix}&quot; + &apos;_&apos; + date + &apos;_UTC-7_&apos; + time);
+}
+buildConversationId();
+</stringProp>
+            <stringProp name="scriptLanguage">javascript</stringProp>
+          </BSFSampler>
+          <hashTree/>
+          <BSFSampler guiclass="TestBeanGUI" testclass="BSFSampler" testname="Conf: Build actions" enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">var fieldTypes = {
+  &quot;text&quot;: {
+    &quot;validate&quot;: function(value) {
+      if (typeof(value) !== &apos;string&apos;) {
+        throw &quot;Invalid value &quot; + value + &quot;. String required.&quot;;
+      }
+    },
+    &quot;parse&quot;: function(value) {
+      return String(value);
+    }
+  },
+  &quot;number&quot;: {
+    &quot;validate&quot;: function(value) {
+      if (isNaN(value)) {
+        throw &quot;Invalid value &quot; + value + &quot;. Number required.&quot;;
+      }
+    }, 
+    &quot;parse&quot;: function(value) {
+      return Number(value);
+    }
+  },
+  &quot;bool&quot;: {
+    &quot;validate&quot;: function(value) {
+      if (value.toLowerCase() !== &apos;true&apos; &amp;&amp; value.toLowerCase() !== &apos;false&apos;) {
+        throw &quot;Invalid value &quot; + value + &quot;. Boolean required.&quot;;
+      }
+    },
+    &quot;parse&quot;: function(value) {
+      return String(value) === &apos;true&apos;;
+    }
+  },
+  &quot;textArray&quot;: {
+    &quot;validate&quot;: function(value) {
+      if (value.length == 0) {
+        throw &quot;Empty value not allowed.&quot;;
+      }
+    },
+    &quot;parse&quot;: function(value) {
+      return value.split(&apos;,&apos;);
+    }
+  },
+  &quot;numberArray&quot;: {
+    &quot;validate&quot;: function(value) { 
+      var values = value.split(&apos;,&apos;);
+      for (var i in values) {
+        if (isNaN(values[i])) {
+          throw &quot;Invalid value &quot; + values[i] + &quot; in list of values: &quot; + value + &quot;. Number required.&quot;;
+        }
+      }
+    },
+    &quot;parse&quot;: function(value) {
+      var values = value.split(&apos;,&apos;);
+      for (var i in values) {
+        values[i] = Number(values[i]);
+      }
+      return values;
+    }
+  }
+}
+
+var checkOffers = {
+  &quot;offers&quot;: {
+    &quot;check&quot;: {
+      &quot;ages&quot;: {
+        &quot;type&quot;: fieldTypes.numberArray, &quot;default&quot;: [18]
+      },
+      &quot;startIn&quot;: {
+        &quot;type&quot;: fieldTypes.number, &quot;default&quot;: 60
+      },
+      &quot;days&quot;: {
+        &quot;type&quot;: fieldTypes.number, &quot;default&quot;: 3
+      },
+      &quot;accessible&quot;: {
+        &quot;type&quot;: fieldTypes.bool, &quot;default&quot;: false
+      },
+      &quot;disneyOwned&quot;: {
+        &quot;type&quot;: fieldTypes.bool, &quot;default&quot;: true
+      },
+      &quot;resortId&quot;: {
+        &quot;type&quot;: fieldTypes.text
+      },
+      &quot;message&quot;: function() { return &quot;Checking offers. Check-in: &quot; + this.startIn + &quot;, ages: &quot; + this.ages; }
+    }
+  }
+}
+
+
+            ////////////////////////// Processing ////////////////////////////
+var helper = vars.getObject(&quot;helper&quot;);
+
+function validateInput(input, actions) {
+  if (input.split(&quot; &quot;).length &lt; 2) { 
+    throw &quot;Invalid action input: &quot; + input + &quot;. The input need to contain an action and a subject.&quot;;
+  }
+  var params = input.split(&apos; &apos;);
+  for (var i=2; i&lt;params.length; i++) {
+    if (params[i].split(&apos;=&apos;).length != 2) {
+      throw &quot;Invalid input parameter: &quot; + params[i] + &quot;. Format must be of type key=value.&quot;;
+    }
+  }
+  if (!actions[params[1]] || !actions[params[1]][params[0]]) {
+    throw &quot;Failed to found &apos;&quot; + params[0] + &quot; &quot; + params[1] + &quot;&apos; as a supported action.&quot;
+          + &quot;\nTo add a new one, go to &apos;Conf: Build actions&apos; and it to the action definitions.&quot;;
+  }
+}
+
+function buildAction(input, actionDefinitions) {
+  function parseInputToObject(array) {
+    var obj = {};
+    for (var i=2; i&lt;array.length; i++) {
+      var keyValue = array[i].split(&quot;=&quot;);
+      obj[keyValue[0]] = keyValue[1];
+    }
+    return obj;
+  }
+  function parseObjectToAction(inputAction, definition, params) {
+    var action = {};
+    for (var i in inputAction) {
+      if (i in definition) {
+        var type = definition[i].type;
+        type.validate(inputAction[i]);
+        action[i] = type.parse(inputAction[i]);
+      } else {
+        throw &quot;Failed to found &apos;&quot; + i + &quot;&apos; as a supported parameter for action &apos;&quot; 
+                       + params[0] + &quot; &quot; + params[1] + &quot;&apos;&quot;;
+      }
+    }
+    return action;
+  }
+  function addDefaultParameters(action, definition) {
+    for (var j in definition) {
+      if ((!action[j] &amp;&amp; action[j] !== false )&amp;&amp; (definition[j].default || definition[j].default == false) &amp;&amp; (j !== &apos;message&apos;)) {
+        action[j] = definition[j].default;
+      }
+    }
+  }
+
+  var params = input.split(&quot; &quot;);
+  var inputObject = parseInputToObject(params);
+  var definition = actionDefinitions[params[1]][params[0]];
+  var action = parseObjectToAction(inputObject, definition, params);
+  addDefaultParameters(action, definition);
+
+  action.message = definition.message.apply(action);
+  action.method = params[0];
+  action.subject = params[1];
+
+  return JSON.stringify(action);
+}
+
+function buildActions() {
+  var input = helper.get(&quot;action&quot;);
+  validateInput(input, checkOffers);
+  var action = buildAction(input, checkOffers);
+  vars.putObject(&quot;action&quot;, JSON.parse(action));
+}
+buildActions();
+</stringProp>
+            <stringProp name="scriptLanguage">javascript</stringProp>
+          </BSFSampler>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Authentication flow" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Request token" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">${authClientId}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                </elementProp>
+                <elementProp name="client_secret" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value">${authClientSecret}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">client_secret</stringProp>
+                </elementProp>
+                <elementProp name="scope" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">RETURN_ALL_CLIENT_SCOPES</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">scope</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${authPath}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/token</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <BSFPreProcessor guiclass="TestBeanGUI" testclass="BSFPreProcessor" testname="Prepare Request" enabled="true">
+              <stringProp name="scriptLanguage">javascript</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">if (${isUser}) {
+    sampler.addArgument(&quot;grant_type&quot;, &quot;password&quot;);
+    sampler.addEncodedArgument(&quot;username&quot;, &quot;${username}&quot;);
+    sampler.addArgument(&quot;password&quot;, &quot;${password}&quot;);
+} else {
+    sampler.addArgument(&quot;grant_type&quot;, &quot;client_credentials&quot;);
+}</stringProp>
+            </BSFPreProcessor>
+            <hashTree/>
+            <BSFPostProcessor guiclass="TestBeanGUI" testclass="BSFPostProcessor" testname="Extract variables" enabled="true">
+              <stringProp name="scriptLanguage">javascript</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">eval(&apos;var response = &apos; + prev.getResponseDataAsString());
+
+vars.put(&quot;authToken&quot;, response.access_token);
+
+var swid = response.swid;
+if (swid) {
+  vars.put(&quot;swid&quot;, swid);
+  vars.put(&quot;encodedSwid&quot;, swid.replace(&quot;{&quot;,&quot;%7B&quot;).replace(&quot;}&quot;,&quot;%7D&quot;));
+}</stringProp>
+            </BSFPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Get Travel Agent Session Id" enabled="true">
+            <stringProp name="IfController.condition">${isTravelAgent}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Request Encrypted Tokens" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${request}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                    <stringProp name="Argument.name"></stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">${authentication-service}/admin/passport-client</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <BSFPreProcessor guiclass="TestBeanGUI" testclass="BSFPreProcessor" testname="Prepare Request" enabled="true">
+                <stringProp name="scriptLanguage">javascript</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">var time = new Date().getTime();
+var iata = String(${iata});
+
+var tokens = &quot;auth-user-type=IATA;&quot; +
+&quot;auth-redirect-location=true;&quot; +
+&quot;auth-user-agencyID=&quot; + iata + &quot;;&quot; +
+&quot;auth-user-firstName=John;&quot; +
+&quot;auth-user-lastName=Doe;&quot; +
+&quot;auth-user-line1=11540;&quot; +
+&quot;auth-user-line2=Oak Street;&quot; +
+&quot;auth-user-city=Eugene;&quot; +
+&quot;auth-user-postalCode=97401-2640;&quot; +
+&quot;auth-user-stateProvince=OR;&quot; +
+&quot;auth-user-country=US;&quot; +
+&quot;auth-user-emailAddress=fakeagent@disney.com;&quot; +
+&quot;auth-time-zone=US\/Central;&quot; +
+&quot;auth-time-current=&quot; + time + &quot;;&quot; +
+&quot;auth-user-agencyPhone=818-555-5555;&quot; +
+&quot;auth-affiliationID=STD_GST|FL_RESIDENT|PASSHOLDER;&quot; +
+&quot;auth-user-agencyType=IATA;&quot; +
+&quot;auth-user-storeID=DTD;&quot; +
+&quot;auth-user-agentID=aSFI;&quot; +
+&quot;auth-user-DTASiteID=6;&quot; +
+&quot;auth-user-CMP=1;&quot; +
+&quot;WDWResorts=80010395%3BentityType%3Dresort;&quot; +
+&quot;arrivalDate=2015-7-08;&quot; +
+&quot;departureDate=2015-7-14;&quot; +
+&quot;numAdults=2;&quot; +
+&quot;numChildren=1;&quot; +
+&quot;child1=10;&quot; + 
+&quot;components=room,tickets&quot;;
+
+var request = {
+  &quot;tokens&quot;: tokens,
+  &quot;gatewayId&quot;: &quot;TAGENT&quot;,
+  &quot;action&quot;: &quot;ENCRYPT&quot;
+}
+
+vars.put(&quot;request&quot;, JSON.stringify(request));
+</stringProp>
+              </BSFPreProcessor>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract tokens" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">as_document</stringProp>
+                <stringProp name="RegexExtractor.refname">tokens</stringProp>
+                <stringProp name="RegexExtractor.regex">&quot;tokens&quot;:&quot;(.+?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default"></stringProp>
+                <stringProp name="RegexExtractor.match_number">1</stringProp>
+              </RegexExtractor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Request Store Login" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${request}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">${authentication-service}/store-login</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <BSFPreProcessor guiclass="TestBeanGUI" testclass="BSFPreProcessor" testname="Prepare Request" enabled="true">
+                <stringProp name="scriptLanguage">javascript</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">var request = {
+  &quot;storeId&quot;: &quot;${storeId}&quot;,
+  &quot;gatewayId&quot;: &quot;TAGENT&quot;,
+  &quot;tokens&quot;: &quot;${tokens}&quot;
+}
+
+vars.put(&quot;request&quot;, JSON.stringify(request));
+
+</stringProp>
+              </BSFPreProcessor>
+              <hashTree/>
+              <BSFPostProcessor guiclass="TestBeanGUI" testclass="BSFPostProcessor" testname="Extract sessionId" enabled="true">
+                <stringProp name="scriptLanguage">javascript</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">eval(&apos;var response = &apos; + prev.getResponseDataAsString());
+
+var link = response.links.self.href;
+var session = link.substring(link.lastIndexOf(&quot;/&quot;)+1, link.length);
+vars.put(&quot;sessionId&quot;, session);</stringProp>
+              </BSFPostProcessor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Get affiliations for consumer" enabled="false">
+            <stringProp name="IfController.condition">${isUser}</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+            <stringProp name="TestPlan.comments">Not working...</stringProp>
+          </IfController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Request affiliations" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">${profile-service}/guests/${encodedSwid}/affiliations</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <BSFPostProcessor guiclass="TestBeanGUI" testclass="BSFPostProcessor" testname="Extract affiliations" enabled="true">
+                <stringProp name="scriptLanguage">javascript</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">var helper = vars.getObject(&quot;helper&quot;);
+eval(&apos;var response = &apos; + prev.getResponseDataAsString());
+
+if (&apos;entries&apos; in response &amp;&amp; response.entries.length != 0) {
+  var affiliations = helper.get(&quot;affiliations&quot;);
+  for (var i in response.entries) {
+    affiliations += &quot;,&quot; + response.entries[i].affiliationType;
+  }
+  vars.put(&quot;affiliations&quot;, affiliations);
+}
+</stringProp>
+              </BSFPostProcessor>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Check offers flow" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Offer search in PDS" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name"></stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">http://productsvc-stage.wdpro.starwave.com/product-service/marketing-offers/10354</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert response code 200" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">vars.put(&quot;controller&quot;, &quot;offer&quot;);</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Offer Controller" enabled="true">
+            <stringProp name="TestPlan.comments">offers</stringProp>
+            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="Sleep_Time" elementType="Argument">
+                  <stringProp name="Argument.name">Sleep_Time</stringProp>
+                  <stringProp name="Argument.value">100</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="Sleep_Mask" elementType="Argument">
+                  <stringProp name="Argument.name">Sleep_Mask</stringProp>
+                  <stringProp name="Argument.value">0xFF</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="Label" elementType="Argument">
+                  <stringProp name="Argument.name">Label</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="ResponseCode" elementType="Argument">
+                  <stringProp name="Argument.name">ResponseCode</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="ResponseMessage" elementType="Argument">
+                  <stringProp name="Argument.name">ResponseMessage</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="Status" elementType="Argument">
+                  <stringProp name="Argument.name">Status</stringProp>
+                  <stringProp name="Argument.value">OK</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="SamplerData" elementType="Argument">
+                  <stringProp name="Argument.name">SamplerData</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="ResultData" elementType="Argument">
+                  <stringProp name="Argument.name">ResultData</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="classname">org.apache.jmeter.protocol.java.test.JavaTest</stringProp>
+          </JavaSampler>
+          <hashTree>
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="Setting Controller" enabled="false">
+              <stringProp name="filename"></stringProp>
+              <stringProp name="parameters"></stringProp>
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="script">sampler.addArgument(&quot;controller&quot;, &quot;client_credentials&quot;);
+vars.put(&quot;controller&quot;, &quot;offer&quot;);</stringProp>
+            </BeanShellPreProcessor>
+            <hashTree/>
+          </hashTree>
+          <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Java Request: HotLoader" enabled="false">
+            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="Sleep_Time" elementType="Argument">
+                  <stringProp name="Argument.name">Sleep_Time</stringProp>
+                  <stringProp name="Argument.value">100</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="Sleep_Mask" elementType="Argument">
+                  <stringProp name="Argument.name">Sleep_Mask</stringProp>
+                  <stringProp name="Argument.value">0xFF</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="Label" elementType="Argument">
+                  <stringProp name="Argument.name">Label</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="ResponseCode" elementType="Argument">
+                  <stringProp name="Argument.name">ResponseCode</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="ResponseMessage" elementType="Argument">
+                  <stringProp name="Argument.name">ResponseMessage</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="Status" elementType="Argument">
+                  <stringProp name="Argument.name">Status</stringProp>
+                  <stringProp name="Argument.value">OK</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="SamplerData" elementType="Argument">
+                  <stringProp name="Argument.name">SamplerData</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="ResultData" elementType="Argument">
+                  <stringProp name="Argument.name">ResultData</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="classname">org.apache.jmeter.protocol.java.test.JavaTest</stringProp>
+          </JavaSampler>
+          <hashTree/>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Shallow Search" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${shallowSearchRequest}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">${availability-service}/grouped-resort-availability</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <BSFPreProcessor guiclass="TestBeanGUI" testclass="BSFPreProcessor" testname="Prepare Request" enabled="true">
+              <stringProp name="scriptLanguage">javascript</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">var helper = vars.getObject(&quot;helper&quot;);
+var action = vars.getObject(&quot;action&quot;);
+
+var affiliations = helper.getValues(&quot;affiliations&quot;);
+var request = {
+  &quot;storeId&quot;: helper.get(&quot;storeId&quot;), 
+  &quot;region&quot;: helper.get(&quot;region&quot;),
+  &quot;affiliations&quot;: affiliations,
+  &quot;checkInDate&quot;: helper.buildDate(action.startIn),
+  &quot;checkOutDate&quot;: helper.buildDate(action.startIn + action.days),
+  &quot;partyMix&quot;: helper.buildPartyMix(action.ages),
+  &quot;accessible&quot;: action.accessible,
+  &quot;disneyOwned&quot;: action.disneyOwned
+}
+
+vars.put(&quot;shallowSearchRequest&quot;, JSON.stringify(request));
+</stringProp>
+            </BSFPreProcessor>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert 200" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+            <BSFPostProcessor guiclass="TestBeanGUI" testclass="BSFPostProcessor" testname="Process response" enabled="false">
+              <stringProp name="scriptLanguage">javascript</stringProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">eval(&apos;var response = &apos; + prev.getResponseDataAsString());
+var helper = vars.getObject(&quot;helper&quot;);
+var action = vars.getObject(&quot;action&quot;);
+
+if (response.resorts.length == 0) {
+  helper.buildErrorScenario(prev, &quot;No resorts on shallow search&quot;);
+} else {
+  var resortsWithOffers = [];
+  var resortsWithoutOffers = [];
+  
+  for (var resort in response.resorts) {
+    if (&apos;offers&apos; in response.resorts[resort]) {
+      resortsWithOffers.push(resort);
+    } else {
+      resortsWithoutOffers.push(resort);
+    }
+  }
+
+  if (resortsWithOffers.length &gt; 0) {
+    action.resortIds = resortsWithOffers;
+    action.availabilityId = response.availabilityId;
+    vars.put(&quot;runDeepSearch&quot;, &quot;true&quot;);
+    vars.putObject(&quot;action&quot;, action);
+  }
+  
+  if (resortsWithoutOffers.length &gt; 0) {
+    helper.buildErrorScenario(prev, &quot;The resorts &quot; + resortsWithoutOffers + &quot; do not have offers.&quot;);
+  }
+}</stringProp>
+            </BSFPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Java Request" enabled="true">
+            <stringProp name="TestPlan.comments">shallow</stringProp>
+            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="Sleep_Time" elementType="Argument">
+                  <stringProp name="Argument.name">Sleep_Time</stringProp>
+                  <stringProp name="Argument.value">100</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="Sleep_Mask" elementType="Argument">
+                  <stringProp name="Argument.name">Sleep_Mask</stringProp>
+                  <stringProp name="Argument.value">0xFF</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="Label" elementType="Argument">
+                  <stringProp name="Argument.name">Label</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="ResponseCode" elementType="Argument">
+                  <stringProp name="Argument.name">ResponseCode</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="ResponseMessage" elementType="Argument">
+                  <stringProp name="Argument.name">ResponseMessage</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="Status" elementType="Argument">
+                  <stringProp name="Argument.name">Status</stringProp>
+                  <stringProp name="Argument.value">OK</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="SamplerData" elementType="Argument">
+                  <stringProp name="Argument.name">SamplerData</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="ResultData" elementType="Argument">
+                  <stringProp name="Argument.name">ResultData</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="classname">org.apache.jmeter.protocol.java.test.JavaTest</stringProp>
+          </JavaSampler>
+          <hashTree/>
+          <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="Iterate resorts with Deep Search" enabled="false">
+            <stringProp name="WhileController.condition">${__javaScript(&quot;${runDeepSearch}&quot; == &quot;true&quot;)}</stringProp>
+          </WhileController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Deep Search - resortId: ${simpleResortId}" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">${deepSearchRequest}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                    <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain"></stringProp>
+              <stringProp name="HTTPSampler.port"></stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol"></stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">${lodging-service}/grouped-resort-room-type-availability</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <BSFPreProcessor guiclass="TestBeanGUI" testclass="BSFPreProcessor" testname="Prepare Request" enabled="true">
+                <stringProp name="scriptLanguage">javascript</stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">var helper = vars.getObject(&quot;helper&quot;);
+var action = vars.getObject(&quot;action&quot;);
+
+function updateResortId() {
+  if (action.resortIds.length == 0) {
+    throw &quot;Last resort consumed, no offers found for deep search.&quot;; 
+  }
+  action.resortId = action.resortIds.shift();
+  vars.put(&quot;simpleResortId&quot;, helper.simplifyId(action.resortId));
+}
+updateResortId();
+
+function buildComponents() {
+  var values = helper.getValues(&quot;components&quot;);
+  var response = [];
+  for (var i in values) {
+    response.push({ &quot;category&quot;: values[i] });
+  }
+  return response;
+}
+
+
+var request = {
+  &quot;storeId&quot;: helper.get(&quot;storeId&quot;),
+  &quot;region&quot;: helper.get(&quot;region&quot;),
+  &quot;affiliations&quot;: helper.getValues(&quot;affiliations&quot;),
+  &quot;components&quot;: buildComponents(),
+  &quot;checkInDate&quot;: helper.buildDate(action.startIn),
+  &quot;checkOutDate&quot;: helper.buildDate(action.startIn + action.days),
+  &quot;partyMix&quot;: helper.buildPartyMix(action.ages),
+  &quot;accessible&quot;: action.accessible,
+  &quot;marketingOfferId&quot;: helper.get(&quot;offerId&quot;) + &quot;;type=packager&quot;,
+  &quot;availabilityId&quot;: action.availabilityId,
+  &quot;resortId&quot;: action.resortId,
+  &quot;disneyOwned&quot;: action.disneyOwned
+}
+
+vars.put(&quot;deepSearchRequest&quot;, JSON.stringify(request));
+vars.putObject(&quot;action&quot;, action);
+</stringProp>
+              </BSFPreProcessor>
+              <hashTree/>
+              <BSFPostProcessor guiclass="TestBeanGUI" testclass="BSFPostProcessor" testname="Process response" enabled="true">
+                <stringProp name="filename"></stringProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="script">eval(&apos;var response = &apos; + prev.getResponseDataAsString());
+
+var helper = vars.getObject(&quot;helper&quot;);
+var action = vars.getObject(&quot;action&quot;);
+
+var roomsWithoutOffers = [];
+
+function parseRoomOffer() {
+  if (&apos;roomTypes&apos; in response) {
+        
+    for (key in response.roomTypes) {
+      var roomType = response.roomTypes[key];
+      
+      if (&apos;offers&apos; in roomType) {
+        for (var i in roomType.offers) {
+          var offer = roomType.offers[i];
+          
+          if (offer.components.length == 1 &amp;&amp; offer.discountGroup.id == action.discount) {
+            action.roomTypeId = roomType.id;
+        	  action.discountGroup = offer.discountGroup.id;
+            action.packageId = offer.resortPackage.id;
+            action.marketingOfferId = offer.marketingOffer.id;
+            action.availabilityId = response.availabilityId;
+            return;
+          }
+        }
+      } else {
+        roomsWithoutOffers.add(key);
+      }
+    }
+  } else {
+    helper.buildErrorScenario(prev, &quot;No room types in deep search&quot;);
+  }
+}
+parseRoomOffer();
+
+if (resortsWithoutOffers.length &gt; 0) {
+  helper.buildErrorScenario(prev, &quot;The rooms &quot; + roomsWithoutOffers + &quot; don&apos;t have offers.&quot;);
+}
+</stringProp>
+                <stringProp name="scriptLanguage">javascript</stringProp>
+              </BSFPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert 200" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="49586">200</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">2</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <JavaSampler guiclass="JavaTestSamplerGui" testclass="JavaSampler" testname="Java Request" enabled="false">
+            <elementProp name="arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="Sleep_Time" elementType="Argument">
+                  <stringProp name="Argument.name">Sleep_Time</stringProp>
+                  <stringProp name="Argument.value">100</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="Sleep_Mask" elementType="Argument">
+                  <stringProp name="Argument.name">Sleep_Mask</stringProp>
+                  <stringProp name="Argument.value">0xFF</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="Label" elementType="Argument">
+                  <stringProp name="Argument.name">Label</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="ResponseCode" elementType="Argument">
+                  <stringProp name="Argument.name">ResponseCode</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="ResponseMessage" elementType="Argument">
+                  <stringProp name="Argument.name">ResponseMessage</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="Status" elementType="Argument">
+                  <stringProp name="Argument.name">Status</stringProp>
+                  <stringProp name="Argument.value">OK</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="SamplerData" elementType="Argument">
+                  <stringProp name="Argument.name">SamplerData</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="ResultData" elementType="Argument">
+                  <stringProp name="Argument.name">ResultData</stringProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="classname">org.apache.jmeter.protocol.java.test.JavaTest</stringProp>
+          </JavaSampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Internal configuration data" enabled="true"/>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Supported configuration values" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="supportedEnvironments" elementType="Argument">
+              <stringProp name="Argument.name">supportedEnvironments</stringProp>
+              <stringProp name="Argument.value">local,latest,stage,epic,env1,env2,env3,qa,sl,prod</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="supportedServices" elementType="Argument">
+              <stringProp name="Argument.name">supportedServices</stringProp>
+              <stringProp name="Argument.value">authentication-service,availability-service,booking-service,cart-service,finder-service,lodging-service,product-service,profile-service,recommendation-service,reservation-service</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="supportedUserTypes" elementType="Argument">
+              <stringProp name="Argument.name">supportedUserTypes</stringProp>
+              <stringProp name="Argument.value">user,guest,travelAgent,partner</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="supportedPaymentTypes" elementType="Argument">
+              <stringProp name="Argument.name">supportedPaymentTypes</stringProp>
+              <stringProp name="Argument.value">CC,RC,GC</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Environment values" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="local" elementType="Argument">
+              <stringProp name="Argument.name">local</stringProp>
+              <stringProp name="Argument.value">http://localhost:8080</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="latest" elementType="Argument">
+              <stringProp name="Argument.name">latest</stringProp>
+              <stringProp name="Argument.value">https://api-latest.wdpro.starwave.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="stage" elementType="Argument">
+              <stringProp name="Argument.name">stage</stringProp>
+              <stringProp name="Argument.value">https://api-stage.wdpro.starwave.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="epic" elementType="Argument">
+              <stringProp name="Argument.name">epic</stringProp>
+              <stringProp name="Argument.value">http://api-qa.wdpro.disney.go.com:8088</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="env1" elementType="Argument">
+              <stringProp name="Argument.name">env1</stringProp>
+              <stringProp name="Argument.value">https://api-env1.wdpro.starwave.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="env2" elementType="Argument">
+              <stringProp name="Argument.name">env2</stringProp>
+              <stringProp name="Argument.value">https://api-env2.wdpro.starwave.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="env3" elementType="Argument">
+              <stringProp name="Argument.name">env3</stringProp>
+              <stringProp name="Argument.value">https://api-env3.wdpro.starwave.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="qa" elementType="Argument">
+              <stringProp name="Argument.name">qa</stringProp>
+              <stringProp name="Argument.value">http://api-qa.wdpro.disney.go.com:8083</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="prod" elementType="Argument">
+              <stringProp name="Argument.name">prod</stringProp>
+              <stringProp name="Argument.value">https://api.wdpro.disney.go.com/global-pool-override-A</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Authentication values" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="latest_clientId" elementType="Argument">
+              <stringProp name="Argument.name">latest_clientId</stringProp>
+              <stringProp name="Argument.value">WDPRO-NGE.PEPCOM-STAGE</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="latest_clientSecret" elementType="Argument">
+              <stringProp name="Argument.name">latest_clientSecret</stringProp>
+              <stringProp name="Argument.value">E2050034-0C95-11E1-872D-1BB84724019B</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="latest_authPath" elementType="Argument">
+              <stringProp name="Argument.name">latest_authPath</stringProp>
+              <stringProp name="Argument.value">stg.authorization.go.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="stage_clientId" elementType="Argument">
+              <stringProp name="Argument.name">stage_clientId</stringProp>
+              <stringProp name="Argument.value">WDPRO-NGE.PEPCOM-STAGE</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="stage_clientSecret" elementType="Argument">
+              <stringProp name="Argument.name">stage_clientSecret</stringProp>
+              <stringProp name="Argument.value">E2050034-0C95-11E1-872D-1BB84724019B</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="stage_authPath" elementType="Argument">
+              <stringProp name="Argument.name">stage_authPath</stringProp>
+              <stringProp name="Argument.value">stg.authorization.go.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="env2_clientId" elementType="Argument">
+              <stringProp name="Argument.name">env2_clientId</stringProp>
+              <stringProp name="Argument.value">WDPRO-PEPCOM.LOAD2-VALID</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="env2_clientSecret" elementType="Argument">
+              <stringProp name="Argument.name">env2_clientSecret</stringProp>
+              <stringProp name="Argument.value">18f54e6916f850d4fd83b026023d8642</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="env2_authPath" elementType="Argument">
+              <stringProp name="Argument.name">env2_authPath</stringProp>
+              <stringProp name="Argument.value">valid.authorization.go.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="sl_clientId" elementType="Argument">
+              <stringProp name="Argument.name">sl_clientId</stringProp>
+              <stringProp name="Argument.value">WDPRO-NGE.PEPCOM-PROD</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="sl_clientSecret" elementType="Argument">
+              <stringProp name="Argument.name">sl_clientSecret</stringProp>
+              <stringProp name="Argument.value">E2050034-0C95-11E1-872D-1BB84724019B</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="sl_authPath" elementType="Argument">
+              <stringProp name="Argument.name">sl_authPath</stringProp>
+              <stringProp name="Argument.value">authorization.go.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="qa_clientId" elementType="Argument">
+              <stringProp name="Argument.name">qa_clientId</stringProp>
+              <stringProp name="Argument.value">WDPRO-NGE.PEPCOM-STAGE</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="qa_clientSecret" elementType="Argument">
+              <stringProp name="Argument.name">qa_clientSecret</stringProp>
+              <stringProp name="Argument.value">E2050034-0C95-11E1-872D-1BB84724019B</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="qa_authPath" elementType="Argument">
+              <stringProp name="Argument.name">qa_authPath</stringProp>
+              <stringProp name="Argument.value">stg.authorization.go.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="prod_authPath" elementType="Argument">
+              <stringProp name="Argument.name">prod_authPath</stringProp>
+              <stringProp name="Argument.value">api-internal.wdpro.starwave.com/global-pool-override-B</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="prod_clientId" elementType="Argument">
+              <stringProp name="Argument.name">prod_clientId</stringProp>
+              <stringProp name="Argument.value">asd</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="prod_clientSecret" elementType="Argument">
+              <stringProp name="Argument.name">prod_clientSecret</stringProp>
+              <stringProp name="Argument.value">E2050034-0C95-11E1-872D-1BB84724019B</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
